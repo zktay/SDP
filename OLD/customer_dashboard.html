@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <tittle>customer_dashboard</tittle>
+        <link rel="stylesheet" href="customer_dashboard.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="index.php" class="logo" href='#'>
+                <i class="fas fa-plane"></i>
+                Hotel Trivago </a>
+    
+            <nav class="navbar">
+    
+                <a href="Main Features/Package/bestseller.php">Best Seller</a>
+                <a href="Main Features/Package/bestvalue.php">Best Value</a>
+                <a href="Main Features/Package/allpackage.php">All Package</a>
+                <a href="Main Features/Package/LimitedTime.php">Limited Time</a>
+            </nav>
+    
+            <div id='loginBox'>
+                <?php 
+                        include("php/session.php");
+                            
+                        if(isset($_SESSION['mySession'])){
+                            echo 
+                            "<i class='fas fa-user' style=\"margin-left: 70px;\" ><ul class=\"user-dropdown\">
+                            <li><i class=\"fas fa-cog\"></i><a href=\"php/accounteditted.php\"><b> ACCOUNT</b></a></li>
+                            <li><i class=\"fas fa-power-off\"></i><a href=\"php/logout.php\"><b> LOGOUT</b></a></li>
+    
+                        </ul></i>";
+                            
+                            } 
+                        else{
+                            echo ("
+                            <button onclick=\"window.location='html/login.html';\" class='btn-1' ><b>LOGIN</b></button>
+                            ");
+                            }   
+                    ?>
+                </div>
+            </div>
+        </header>
+    
+        <div class="main_container">
+            <div class="grid_container">
+                <div class="grid_item_1">
+                    <h1>test</h1>
+                </div>
+                <div class="grid_item_2">
+                    <h1>test</h1>
+                </div>
+                <div class="grid_item_3">
+                    <h1>test</h1>
+                </div>
+                <div class="grid_item_4">
+                    <h1>test</h1>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

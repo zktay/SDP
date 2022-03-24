@@ -1,0 +1,115 @@
+/* predefined flex properties classes */
+.flex-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-sa-c {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-sb-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-fs {
+    align-items: flex-start;
+}
+
+/* general */
+* {
+    margin:0px;
+    overflow-x: hidden;
+}
+
+/* header */
+header {
+    z-index: 100;
+    background: linear-gradient( #dddddd, #cccccc, #bbbbbb);
+    height: 85px;
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+}
+
+.logo {
+    margin-left:10px;
+    height: 70px;
+    overflow-y: hidden;
+}
+
+.logo img {
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+.logo img:hover {
+    transform:scale(1.05);
+    transition: 0.5s;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:5vw;
+}
+
+#loginIcon {
+    height:30px;
+    width:30px;
+    transition:0.5s;
+}
+
+#loginIcon:hover {
+    height:40px;
+    width:40px;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+hr {
+    width:90vw;
+    margin:auto;
+}
+
+footer {
+    width:100%;
+    margin: 20px 5vw 0px 5vw;
+}
+
+#footerNav {
+    margin-top: 10px;
+}
+
+footer > hr {
+    position:absolute;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    margin: 100px 100px 0px 100px;
+}
+
+

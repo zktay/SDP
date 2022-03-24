@@ -1,0 +1,196 @@
+@import 'admin.css';
+
+.mainBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.5vw;
+    padding:10px;
+    margin: 10px 10px 0px 10px;
+}
+
+.subBox {
+    display:flex;
+    background-color: bisque;
+    height: 10vw;
+    border: solid;
+    border-radius: 7px;
+    border-width: .5px;
+}
+
+.titleBox {
+    display:flex;
+    background-color: bisque;
+    height: 3vw;
+    border: solid;
+    border-radius: 7px;
+    border-width: .5px;
+    width: 15vw;
+}
+
+
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color:inherit;
+}
+
+.addButton {
+    margin-right:15px;
+    width:8vw;
+    height:55px;
+}
+
+.nameLabel {
+    margin: 10px 0px 15px 0px;    
+}
+
+
+.nameInput input {
+    height: 2vw;
+    width: 20vw;
+}
+
+.nameLabel::after {
+    content: " : ";
+}
+
+#nameButtons {
+    margin-top: 20px;
+    padding-bottom: 3vh;
+}
+
+#articleSubmit,  #articleReset {
+    height: 2vw;
+    width: 10vw;
+    margin-right: 5vh;
+}
+
+textarea {
+    width: 40%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    font-size:15pt;
+}
+
+.box {
+    margin: 5px;
+    border: solid;
+    border-width: .5px;
+    border-radius: 7px;
+    height: 8vh;
+    width: 15vw;
+}
+
+.placer::after{
+    content: " : ";
+}
+
+.articleButton {
+   text-align: right;
+   margin: 10px 10px 0 0;
+}
+
+div.indent {
+    margin:10px;
+}
+.newsBox {
+    margin: 100px;
+}
+
+.newsBox p {
+    text-indent: 50px;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+
+  .prev:hover, .next:hover, .remove:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
+
+  /* Next & previous buttons */
+.prev, .next, .remove {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 7px;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev {
+      left:0;
+  }
+
+  .remove {
+      right: 5vh;
+      top:5vh;
+  }
+
+.slideshowContainer  {
+    max-width: 70vw;
+    height:300px;
+    position: relative;
+    margin: auto;
+     
+}
+
+#nameInput {
+    width: 200px;
+    height:150px;
+    margin-right: 5px;
+}
+.imgSlideshow {
+    display: none;
+  }
+
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+.nameLabel, .nameInput, #nameButtons {
+    margin: 0 0 0 30vw;
+}

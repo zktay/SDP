@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/4a8b676a62.js" crossorigin="anonymous"></script>
+        <tittle>cus_modify</tittle>
+        <link rel="stylesheet" href="history_payment.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="index.php" class="logo" href='#'>
+                <i class="fas fa-plane"></i>
+                Hotel Trivago </a>
+    
+            <nav class="navbar">
+    
+                <a href="Main Features/Package/bestseller.php">Best Seller</a>
+                <a href="Main Features/Package/bestvalue.php">Best Value</a>
+                <a href="Main Features/Package/allpackage.php">All Package</a>
+                <a href="Main Features/Package/LimitedTime.php">Limited Time</a>
+            </nav>
+    
+            <div id='loginBox'>
+                <div class='cart'>
+                    <a href='Main Features/cart/cart.php'>
+                        <div class="fas fa-shopping-cart" id="cart-btn">
+                            <input type='text' id='cartItemQuantity' value='<?php /*echo $cartQuantity*/ ?>' onclick="location.href='#'" readonly>
+                        </div>
+                    </a>
+                </div>
+    
+                <div id='dropDown'>
+                    <button id='loginDetail'>
+                        <a href='Main Features/edit/editinfo.php' target="_blank">
+                            <img src='Main Features/edit/img/ <?php /*echo $img;*/ ?>' id='profilePic'>
+                        </a>
+                        <div id='displayName'>
+                            <?php /*echo $custName;*/ ?>
+                        </div>
+                        <div id='dropDownOption'>
+                            <a href='Main Features/edit/editinfo.php'>My Profile</a>
+                            <a href='Main Features/purchase/purchase.php'>My Order</a>
+                            <a href='Main Features/Login/logout.php'>Log Out</a>
+                        </div>
+    
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="main_container">
+            <div class="top_container">
+                <h1>History Payment</h1>
+            </div>
+            <div class="btm_container">
+
+
+                <div class="history_payment_content">
+                    <div class="history_payment_content_topic_1">
+                        <h2>Package Name<i class='fas fa-sort' style="margin-left:10px;"></i></h2>
+                        
+                    </div>
+                    <div class="history_payment_content_topic_2">
+                        <h2>Reservation Duration<i class='fas fa-sort' style="margin-left:10px;"></i></h2>
+                    </div>
+                    <div class="history_payment_content_topic_3">
+                        <h2>Amount<i class='fas fa-sort' style="margin-left:10px;"></i></h2>
+                    </div>
+                    <div class="history_payment_content_topic_4">
+                        <h2>Payment Date<i class='fas fa-sort' style="margin-left:10px;"></i></h2>
+                    </div>
+                    <div class="history_payment_content_topic_5">
+                        <h2>View Invoice</h2>
+                    </div>
+                </div>
+
+                <div class="history_payment_content">
+                    <div class="history_payment_content_item_1">
+                        <h2>Package Name</h2>
+                    </div>
+                    <div class="history_payment_content_item_2">
+                        <h2>Reservation Duration</h2>
+                    </div>
+                    <div class="history_payment_content_item_3">
+                        <h2>Amount</h2>
+                    </div>
+                    <div class="history_payment_content_item_4">
+                        <h2>Payment Date</h2>
+                    </div>
+                    <div class="history_payment_content_item_5">
+                        <button class ="button"><span>Invoice</span></button>
+                    </div>
+                </div>
+            </div>
+            
+
+                
+
+            
+            
+        </div>
+    </body>
+</html>

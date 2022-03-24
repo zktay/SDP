@@ -1,0 +1,83 @@
+@import 'admin.css';
+
+
+
+#ticketTable {
+    text-align: center;
+}
+
+#ticketTable th {
+    background-color: #48b1bd;
+    height: 4vw;
+    border-radius: 7px;
+}
+
+
+table {
+    table-layout: fixed;
+    border: solid;
+    border-radius: 7px;
+    border-width: .5px;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border: lightgrey;
+    border-radius: 7px;
+    border-width: .5px;
+    border-style: solid;
+    height: 3vw;
+}
+
+.actionButton {
+    margin: 10px;
+}
+
+
+#ticketOverlay{
+    width: 20vw;
+    height: 200px;
+    margin-left: -10vw;
+    margin-top: -100px;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #dddddd, #cccccc, #bbbbbb);
+    z-index:100;
+}
+
+#feedbackOverlay{
+    width: 20vw;
+    height: 200px;
+    margin-left: -10vw;
+    margin-top: -100px;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #dddddd, #cccccc, #bbbbbb);
+    z-index:100;
+}
+
+
+.filterBox {
+    border-radius:7px;
+    border: solid;
+    border-width: .5px;
+    height: 1.5vw;
+    width: 5vw;
+}
+

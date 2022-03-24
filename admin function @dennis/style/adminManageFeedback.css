@@ -1,0 +1,57 @@
+@import 'admin.css';
+
+
+.mainBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.5vw;
+    padding:10px;
+    margin: 10px 10px 0px 10px;
+}
+
+.subBox {
+    display:flex;
+    background-color: bisque;
+    height: 10vw;
+    border: solid;
+    border-radius: 7px;
+    border-width: .5px;
+
+}
+
+.placer::after{
+    content: " : ";
+}
+
+.box {
+    margin: 5px;
+    border: solid;
+    border-width: .5px;
+    border-radius: 7px;
+    height: 8vh;
+    width: 15vw;
+}
+
+.subBoxBtn {
+    background-color: bisque;
+    height: 10vw;
+    border: solid;
+    border-radius: 7px;
+    border-width: .5px;
+}
+
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color:inherit;
+}
+
+.articleButton {
+    text-align: right;
+    margin: 10px 10px 0 0;
+ }
+
+ .addButton {
+    margin-right:15px;
+    width:8vw;
+    height:55px;
+}

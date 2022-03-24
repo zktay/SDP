@@ -1,0 +1,117 @@
+@import 'master.css';
+@import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
+
+.ticketDashboard {
+    text-align: center;
+    padding: 2vh;
+    height: 50px;
+    background-color: lightgray;
+    margin: 2vh;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: .5px;
+    width: auto;
+}
+
+.custGridContainer {
+    display:grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    padding: 40px;
+}
+
+.custGridItem {
+    text-align: center;
+}
+
+#greeting {
+    display: flex;
+    margin: 25px;
+    width: auto;
+    line-height: 60px;
+    border-radius: 7px;
+    background-color: lightgrey;
+    font-size: 25px;
+    text-align: center;
+    border-style: solid;
+    border-width: .5px;
+}
+
+#gridButton {
+    width:200px;
+    height: 50px;
+}
+
+#vpGreyOut {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    display: none;
+
+    background-color: #ccc;
+    opacity: 0.6;
+}
+.overlayTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.overlayBtn {
+    width:5vw;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.overlayBtn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.searchBar {
+    height:55px;
+    width:35vw;
+    background: linear-gradient(135deg, #dddddd, #cccccc, #bbbbbb);
+    margin:10px 10px 20px 20px;
+    border-radius: 7px;
+}
+
+.searchInput {
+    border-radius:7px;
+    border: solid;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: .5px;
+    height: 1.5vw;
+    width: 11vw;
+}
+
+.filterBtn {
+    width:5vw;
+    height: 3.5vh;
+
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.filterBtn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.flexWrapper {
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+}
