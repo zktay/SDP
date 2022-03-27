@@ -2,15 +2,11 @@
 <?php
     require("connect.php");
     include("header.php");
-    //include("session.php");
     $accID = $_SESSION['customerID'];
-    //session_start();
-    $cusID = 1;
-    //$accID = 'fdsfsd@jkjfas.com';
-    $sql_cus = "SELECT * FROM customer WHERE customerID = 1";
+    $cusID = $_SESSION['customerID'];
+    $sql_cus = "SELECT * FROM customer WHERE customerID = '$cusID'";
     $data = $mysqli -> query($sql_cus);
     $cus_info = $data -> fetch_assoc();
-    //$_SESSION['accountID'] = $accID;
     
 ?>
 
@@ -36,7 +32,8 @@
                         <div class="content" id="manPic">
                             <div class="title"><h1 class="manCat">Manage Picture</h1></div>
                             <div class="form_pic">
-                            <form method="POST" ENCTYPE="multipart/form-data" action="cus_handler.php?cusid='.$cusID.'&&name='.$accID.'&&id=5">
+                            <form method="POST" ENCTYPE="multipart/form-data" action="cus_handler.php">
+                                <input type="hidden" name ="id" value = "5">
                                 <table >
                                     <tr>
                                         <div class="c_pic"><img id="output_image"><p class="no_pic">No Picture Chosen</p></div>
@@ -65,7 +62,8 @@
                             <div class="title1"><h1 class="manCat">Manage Username</h1></div>
                             <div class="conUser">
                                 <div class="form1">
-                                    <form method="POST" action ="cus_handler.php?cusid='.$cusID.'&&name='.$accID.'&&id=1">
+                                    <form method="POST" action ="cus_handler.php">
+                                    <input type="hidden" name ="id" value = "1">
                                         <table >
                                             <tr>
                                                 <th>Username:</th>
@@ -98,7 +96,8 @@
                             <div class="title1"><h1 class="manCat">Manage Email</h1></div>
                             <div class="conUser">
                                 <div class="form1">
-                                    <form method="POST" action ="cus_handler.php?cusid='.$cusID.'&&name='.$accID.'&&id=2">
+                                    <form method="POST" action ="cus_handler.php">
+                                    <input type="hidden" name ="id" value = "2">
                                         <table >
                                             <tr>
                                                 <th>Email:</th>
@@ -132,13 +131,14 @@
                             <div class="title1"><h1 class="manCat">Manage Password</h1></div>
                             <div class="conUser">
                                 <div class="form1">
-                                    <form method="POST" action ="cus_handler.php?cusid='.$cusID.'&&name='.$accID.'&&id=3">
+                                    <form method="POST" action ="cus_handler.php">
+                                    <input type="hidden" name ="id" value = "3">
                                         <table >
                                             <tr>
                                                 <th>Password:</th>
                                             </tr>
                                             <tr>
-                                                <td class="td"><input disabled style="width:100%; background-color:white;" value ="***********"></td>
+                                                <td class="td"><input required type="password" name="cu_password"style="width:100%; background-color:white;" placeholder ="Current Password:"></td>
                                             </tr>
                                             <tr></tr>
                                             <tr>
@@ -173,7 +173,8 @@
                             <div class="title1"><h1 class="manCat">Manage Contact</h1></div>
                             <div class="conUser">
                                 <div class="form1">
-                                    <form method="POST" action="cus_handler.php?cusid='.$cusID.'&&name='.$accID.'&&id=4">
+                                    <form method="POST" action="cus_handler.php">
+                                    <input type="hidden" name ="id" value = "4">
                                         <table >
                                             <tr>
                                                 <th>Contact:</th>

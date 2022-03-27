@@ -1,10 +1,15 @@
 <?php
 include("connect.php");
 session_start();
-$accoundID = $_SESSION['customerID'];
-$cusid = intval($_GET['cusid']);
-$id = intval($_GET['id']);
-$accID = $_GET['name'];
+$cusid = $_SESSION['customerID'];
+$sql = "SELECT accountID FROM customer WHERE customerID = '$cusid'";
+$sql = $mysqli-> query($sql);
+$result = $sql -> fetch_assoc();
+$accoundID = $result['accountID'];
+$sql_pass = "SELECT password FROM accounts WHERE accountID = '$accoundID'";
+$sql_pass = $mysqli ->query($sql_pass);
+$result = $sql_pass -> fetch_assoc();
+$id = intval($_POST['id']);
 
 if ($id == 1){
     $new_user = $_POST['new_user'];
@@ -17,7 +22,7 @@ if ($id == 1){
 }else if ($id == 2){
     $new_email = $_POST['new_email'];
     $new_email_sql = "UPDATE customer SET accountID = '$new_email' WHERE customerID = '$cusid'";
-    $new_email_sql1 = "UPDATE accounts SET accountID = '$new_email' WHERE accountID = '$accoundID";
+    $new_email_sql1 = "UPDATE accounts SET accountID = '$new_email' WHERE accountID = '$accoundID'";
     if(!mysqli_query($mysqli, $new_email_sql)){
         echo '<script>';
         echo 'alert ("Email has been taken!");';
@@ -33,13 +38,24 @@ if ($id == 1){
     }
     mysqli_close($mysqli);
 }else if ($id == 3){
+    $cu_pass=$_POST["cu_password"];
+    $en_cu_pass = sha1($cu_pass);
+    $old_pass = $result['password'];
     $con_pass = $_POST['con_pass'];
-    $new_pass_sql = "UPDATE accounts SET password = '$con_pass_sql' WHERE accountID = '$accID'";
-    $sql = $mysqli -> query($new_pass_sql);
-    echo '<script>';
-    echo 'alert ("Password Changed!");';
-    echo 'window.location.href = "customer_modify.php";';
-    echo '</script>';
+    $en_con_pass = sha1($con_pass);
+    if ($en_cu_pass == $old_pass){
+        $new_pass_sql = "UPDATE accounts SET password = '$en_con_pass' WHERE accountID = '$accoundID'";
+        $sql = $mysqli -> query($new_pass_sql);
+        echo '<script>';
+        echo 'alert ("Password Changed!");';
+        echo 'window.location.href = "customer_modify.php";';
+        echo '</script>';
+    }else{
+        echo '<script>';
+        echo 'alert("Current Password incorrect");';
+        echo 'window.location.href = "customer_modify.php";';
+        echo '</script>';
+    }
 }else if ($id == 4){
     $new_con = $_POST['new_con'];
     $new_con_sql = "UPDATE customer SET custContact = '$new_con' WHERE customerID = '$cusid'";
@@ -66,8 +82,8 @@ if ($id == 1){
         echo 'alert ("Profile Pic Changed!");';
         echo 'window.location.href = "customer_modify.php";';
         echo '</script>';
+     }
 }
-    }
-    $sql = $mysqli -> query($new_pic);
+    
     
 ?>
