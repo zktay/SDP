@@ -30,7 +30,7 @@
   min-height: 750px;
   min-width: 80%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .cart_content{

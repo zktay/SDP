@@ -18,6 +18,7 @@
         $subtotal = 0;
         $quantity = 1;
         $temp1 = 0;
+
     }
     
 ?>
@@ -104,11 +105,21 @@
                     <br>
                     <br>');          
                     if(isset($_SESSION['customerID'])){
-                        echo('
-                    <a href="payment.php?id='.$cusID.'"><button class="button" style="margin-top:0px;"><span>Checkout</span></button></a>
-                    <div class="sum_box_pic">
-                        <img src="pngkit_visa-mastercard-logo-png_9100446.png" width="449px" height="120px">
-                    </div>');
+                        if( $count == 0) {
+                            echo('
+                            <button class="button" style="margin-top:0px;" onclick="emptycart()"><span>Checkout</span></button>
+                            <div class="sum_box_pic">
+                                <img src="pngkit_visa-mastercard-logo-png_9100446.png" width="449px" height="120px">
+                            </div>
+
+                            ');
+                        }else{
+                             echo('
+                            <a href="payment.php?id='.$cusID.'"><button class="button" style="margin-top:0px;"><span>Checkout</span></button></a>
+                            <div class="sum_box_pic">
+                                <img src="pngkit_visa-mastercard-logo-png_9100446.png" width="449px" height="120px">
+                            </div>');
+                        }
                     }else{
                         echo('
                     <a href = "signup.php"> <button class="button" style="margin-top:0px;" onlick="signup();"><span>Checkout</span></button></a>

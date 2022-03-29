@@ -68,3 +68,7 @@ function signup(){
     alert("Please Sign Up!");
     window.location.href ="signup.php";
 }
+
+function emptycart(){
+    alert("Empty Cart!");
+}
