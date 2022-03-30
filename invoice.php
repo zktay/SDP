@@ -5,7 +5,7 @@
 		session_start();
         $packageID = $_GET['packID'];
         $cusID = $_SESSION['customerID'];
-        $sql = "SELECT py.cCardBank, r.reserID, r.quantity, cus.custName, p.pDesc, p.pPrice, r.customerID, p.pName, r.reserDate, py.trxnDateTime, py.trxnAmount FROM packages p INNER JOIN reservations r ON p.packageID = r.packageID INNER JOIN payments py ON r.reserID = py.reserID INNER JOIN customer cus ON r.customerID = cus.customerID INNER JOIN cart ca ON ca.customerID = cus.customerID WHERE p.packageID = '$packageID'";
+        $sql = "SELECT py.cCardBank, r.reserID, r.quantity, cus.custName, p.pDesc, p.pPrice, r.customerID, p.pName, r.reserDate, py.trxnDateTime, py.trxnAmount FROM packages p INNER JOIN reservations r ON p.packageID = r.packageID INNER JOIN payments py ON r.reserID = py.reserID INNER JOIN customer cus ON r.customerID = cus.customerID WHERE r.packageID = '$packageID'";
 		$sql_admin = "SELECT a.adminID, a.adminName, a.adminContact FROM admin a INNER JOIN packages p ON a.adminID = p.adminID";
 		$data_a = $mysqli -> query($sql_admin);
 		$result_a = $data_a ->fetch_assoc();
