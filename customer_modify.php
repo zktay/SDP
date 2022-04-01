@@ -5,9 +5,12 @@
     $accID = $_SESSION['customerID'];
     $cusID = $_SESSION['customerID'];
     $sql_cus = "SELECT * FROM customer WHERE customerID = '$cusID'";
+    $sql_pic = "SELECT count(customerPic) FROM customer WHERE customerID = '$cusID'";
     $data = $mysqli -> query($sql_cus);
+    $data_pic = $mysqli -> query($sql_pic);
     $cus_info = $data -> fetch_assoc();
-    
+    $cus_pic = $data_pic -> fetch_assoc();
+    $count = $cus_pic['count(customerPic)'];
 ?>
 
 <html lang="en">
@@ -26,9 +29,18 @@
             </div>
             <div class="btm_container">
                 <div class="pic_container">
-                    <div class="pic">
+                    <div class="pic">');
+                    if ($count == 0){
+                        echo ('
+                        <button class="click-me-none" onclick ="editPic()"><span style="font-size:30px; font:bold;">ADD PICTURE</span></button>
+                        ');
+                    }else{
+                        echo ('
                         <img style="z-index: -1;" src="data:images/jpeg;base64,'. $cusPic .'" alt=""><span class="editPic"></span>
                         <button class="click-me" onclick ="editPic()"><span style="font-size:30px; font:bold;">EDIT PICTURE</span></button>
+                        ');
+                    }
+                    echo ('
                         <div class="content" id="manPic">
                             <div class="title"><h1 class="manCat">Manage Picture</h1></div>
                             <div class="form_pic">
