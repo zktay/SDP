@@ -33,7 +33,7 @@
                 <table id="Feedbacklist">
                     <tr>
                         <th colspan="4">Package Name<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(0)"></i></th>
-                        <th colspan="1">Reservation Duration<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(1)"></i></th>
+                        <th colspan="1">Reservation Date<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(1)"></i></th>
                         <th colspan="1">Amount<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(2)"></i></th>
                         <th colspan="1">Payment Date<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(3)"></i></th>
                         <th colspan="1">Status<i class='fas fa-sort' style="margin-left:10px;" onclick="sortTableFeedback(4)"></i></th>
@@ -44,7 +44,7 @@
                         echo ('
                             <tr>
                                 <td colspan="4">'. $result['pName']. '</td>
-                                <td colspan="1">'. $result['pDuration'].' days</td>
+                                <td colspan="1">'. $result['reserDate'].'</td>
                                 <td colspan="1">RM '. $result['trxnAmount'].'</td>
                                 <td colspan="1">'. $result['trxnDateTime'].'</td>
                                 <form method="post" action ="add_feedback.php">

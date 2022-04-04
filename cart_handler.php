@@ -11,10 +11,11 @@
     $sql = "SELECT * FROM cart where customerID='$customerID1'";
     $bookingStatus = "completed";
     $bookingDateTime = date('Y-m-d h:i:s', time());
-    $reserDate = date('Y-m-d', time());
+    //$reserDate = date('Y-m-d', time());
     $data = $mysqli -> query($sql);
     foreach($temp1 as $key => $value){
         for ($i = 0; $result = $data -> fetch_assoc(); $i++){
+            $reserDate = $result['reservationDate'];
             $customerID = $result['customerID'];
             $packageID = $result['packageID'];
             $quantity = $temp1[$i];
@@ -34,7 +35,6 @@
             $sqli1 = $sql_1 -> fetch_assoc();
             $sqli1 = $sqli1['reserID'];
             //echo ($sqli1);
-            
         }
     }
     
